@@ -8,28 +8,53 @@ body {
   overflow-x: hidden;  /* Prevent horizontal scroll */
   height: 100vh;  
 }
-.user-info-btn{
+/* Button styles */
+.user-info-btn {
   background: linear-gradient(90deg, #7efff6, #75ffb5); /* Smooth gradient */
-  font-size: large;
-  padding: 15px 25px;
+  font-size: large; /* Default font size */
+  padding: 15px 25px; /* Default padding */
   border: none;
   border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%;
+  width: 100%; /* Full width on all screen sizes */
   animation: fadeIn 1s ease-in-out; /* Smooth entrance */
 }
 
-@keyframes fadeIn {
-  0% {
-      opacity: 0;
-      transform: translateY(-20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .user-info-btn {
+    font-size: 1.2rem; /* Slightly smaller font size for medium screens */
+    padding: 12px 20px; /* Reduce padding for medium screens */
   }
 }
+
+@media (max-width: 768px) {
+  .user-info-btn {
+    font-size: 1rem; /* Further reduce font size for smaller screens */
+    padding: 10px 15px; /* Further reduce padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .user-info-btn {
+    font-size: 0.9rem; /* Smaller font size for mobile screens */
+    padding: 8px 12px; /* Smaller padding for mobile screens */
+  }
+}
+
+/* Fade-in animation for smooth entrance */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Container for the page */
 .container {
   display: flex;

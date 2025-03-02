@@ -1,3 +1,4 @@
+/* Container for the entire page */
 .homecontainer {
   min-height: 100vh; /* Ensures it covers the full viewport height */
   display: flex;
@@ -6,11 +7,13 @@
   justify-content: center;
   text-align: center;
   padding: 20px;
+  position: relative; /* Needed for absolute positioning of other elements */
 }
 
+/* Welcome text style */
 .welcometext {
   position: absolute; /* Fix it at the top */
-  top: 1px; /* Distance from the top */
+  top: 1rem; /* Distance from the top */
   font-size: 2rem; 
   font-weight: 700;
   text-transform: uppercase; /* Modern uppercase style */
@@ -20,20 +23,23 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* Gradient text effect */
   animation: fadeIn 1s ease-in-out; /* Smooth entrance */
+  width: 100%; /* Ensures it doesn't overflow */
+  padding: 0 20px; /* Adds some space on the sides */
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
   0% {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* User card container (positioned at the top-right) */
 .usercardcontainer {
   position: absolute; /* Position relative to the viewport */
   top: 20px; /* Distance from the top */
@@ -41,6 +47,7 @@
   z-index: 1000; /* Ensures it stays on top */
 }
 
+/* User info container - centered horizontally and vertically */
 .userinfocontainer {
   display: flex;
   justify-content: center;  /* Centers it horizontally */
@@ -49,27 +56,46 @@
   padding: 20px;  /* Add some spacing */
 }
 
-/* Mobile-specific adjustments */
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 1200px) {
+  .welcometext {
+    font-size: 1.8rem; /* Adjust the font size for medium screens */
+    top: 1.5rem; /* Space it slightly further from the top */
+  }
+}
+
 @media (max-width: 768px) {
   .welcometext {
-    font-size: 1.5rem; /* Smaller font size on mobile */
-    top: 10px; /* Adjust distance from the top */
-  }
-
-  .userinfocontainer {
-    padding: 10px; /* Reduced padding for smaller screens */
+    font-size: 1.5rem; /* Further reduce font size for smaller screens */
+    top: 2rem; /* Increase top margin for better spacing */
   }
 
   .usercardcontainer {
-    top: 10px; /* Adjust position */
-    right: 10px; /* Adjust right margin */
+    top: 10px; /* Reduce the top spacing on smaller screens */
+    right: 10px; /* Reduce the right spacing */
   }
 
   .homecontainer {
-    padding: 10px; /* Reduced padding */
-    justify-content: flex-start; /* Align items at the top for more space */
+    padding: 10px; /* Reduce padding on smaller screens */
   }
 }
+
+@media (max-width: 480px) {
+  .welcometext {
+    font-size: 1.2rem; /* Further reduce font size for very small screens */
+    top: 2.5rem; /* Increase spacing from the top */
+  }
+
+  .usercardcontainer {
+    top: 5px; /* Adjust top spacing for small screens */
+    right: 5px; /* Adjust right spacing */
+  }
+
+  .homecontainer {
+    padding: 5px; /* Further reduce padding */
+  }
+}
+
 
 /* Container for each section */
 .container {
