@@ -81,7 +81,7 @@ const UserInfo: React.FC = () => {
 
             return result.data;
         } catch (error) {
-            setErrorMessage("Error fetching data");
+            console.error("Error fetching data:", error);
         }
     };
     // Fetch user info

@@ -74,9 +74,9 @@ export const AuditR: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     // Add state for audit ratio and total up/down (example values)
-    const [auditRatio, setAuditRatio] = useState(0);
-    const [totalUp, setTotalUp] = useState(0);
-    const [totalDown, setTotalDown] = useState(0);
+    const [, setAuditRatio] = useState(0);
+    const [, setTotalUp] = useState(0);
+    const [, setTotalDown] = useState(0);
 
     // Fetch user audits on component mount
     useEffect(() => {
