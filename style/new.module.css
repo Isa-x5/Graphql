@@ -1,0 +1,534 @@
+.homecontainer {
+  min-height: 100vh; /* Ensures it covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.welcometext {
+  position: absolute; /* Fix it at the top */
+  top: 1px; /* Distance from the top */
+  font-size: 2rem; 
+  font-weight: 700;
+  text-transform: uppercase; /* Modern uppercase style */
+  letter-spacing: 2px; /* Spaced-out letters for elegance */
+  text-align: center;
+  background: linear-gradient(90deg, #7efff6, #75ffb5); /* Smooth gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient text effect */
+  animation: fadeIn 1s ease-in-out; /* Smooth entrance */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.usercardcontainer {
+  position: absolute; /* Position relative to the viewport */
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  z-index: 1000; /* Ensures it stays on top */
+}
+
+.userinfocontainer {
+  display: flex;
+  justify-content: center;  /* Centers it horizontally */
+  align-items: center;  /* Centers it vertically */
+  width: 100%;  /* Full width */
+  padding: 20px;  /* Add some spacing */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .welcometext {
+    font-size: 1.5rem; /* Smaller font size on mobile */
+    top: 10px; /* Adjust distance from the top */
+  }
+
+  .userinfocontainer {
+    padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  .usercardcontainer {
+    top: 10px; /* Adjust position */
+    right: 10px; /* Adjust right margin */
+  }
+
+  .homecontainer {
+    padding: 10px; /* Reduced padding */
+    justify-content: flex-start; /* Align items at the top for more space */
+  }
+}
+
+/* Container for each section */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f0f8ff; /* Light blue background */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Skill Component */
+.Skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #00bcd4, #8bc34a); /* Light blue to green gradient */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skillsAmount {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.skillsAmount1, .skillsAmount2 {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.h3m, .h3z {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: black;
+}
+
+.Code, .code2 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: black; /* Very light cyan color */
+}
+
+.ChartContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  
+}
+
+.Chart1, .Chart2 {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 10px;
+  border-radius: 10px;
+  background: transparent; /* Clean white background for charts */
+}
+
+/* Audit Ratio */
+.auditContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  background: #f1f8e9; /* Light green background */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auditTitle {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: black; /* Green accent color */
+}
+
+.progressBar {
+  width: 100%;
+  height: 20px;
+  background-color: #cce7d0; /* Light green background for the progress bar */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.progressDone, .progressReceived {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.progressDone {
+  background-color: #4caf50; /* Green for progress */
+}
+
+.progressReceived {
+  background-color: #ff7043; /* Light red for received */
+}
+
+.auditRatio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.ratioNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00bcd4; /* Light blue accent */
+}
+
+.ratioText {
+  font-size: 1.4rem;
+  color: #388e3c; /* Slightly darker green */
+}
+
+.auditInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.auditData {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 10px;
+  background: #ffffff; /* White background for each audit item */
+  border-radius: 8px;
+}
+
+/* Auditable Component */
+.auditsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.auditSection {
+  margin-bottom: 30px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #81d4fa, #66bb6a); /* Light blue to light green gradient */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.header {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: black; /* Light blue header */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f0f8ff; /* Light blue background for table */
+  max-height: 300px;
+  overflow-y: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.th, .td {
+  width: 100%;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #d1d1d1;
+  color: #333;
+}
+
+.th {
+  background-color: #4caf50; /* Green header for the table */
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.pass {
+  color: lightgreen; 
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.fail {
+  color: #ff7043; /* Light red for failure */
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.pass:hover, .fail:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.table::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table::-webkit-scrollbar-thumb {
+  background-color: #00bcd4;
+  border-radius: 4px;
+}
+
+.table::-webkit-scrollbar-track {
+  background: #f1f8e9;
+}
+
+.table .td {
+  font-size: 1rem;
+  padding: 12px;
+  background-color: #ffffff; /* White background for table rows */
+  transition: all 0.3s ease;
+}
+
+.noAudits {
+  text-align: center;
+  color: #bbb;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 20px;
+  background: #e8f5e9; /* Light green background for no audits */
+  border-radius: 10px;
+}
+
+.auditSection:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+
+.levels{
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.xp {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Ensuring the container level spans the full width */
+.containerLevel {
+  width: 100%; /* Ensure full width of the screen or parent container */
+  height:80px; /* Set height for the container */
+  position: relative; /* For absolute positioning of child elements */
+  background-color: #e1f5fe; /* Light blue background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.1); /* Shadow effect */
+  padding: 10px 20px; /* Add some padding for the internal content */
+  margin-top: 30px;
+  overflow: auto; /* Prevent anything from overflowing */
+}
+
+/* Ensures that the level markers and blobs take full width */
+.level {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Style for individual level markers */
+.levelMarker {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 10px;
+
+}
+
+.levelLabel {
+  position: absolute;
+  bottom: 15px;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.blob {
+  position: absolute;
+  bottom: 0px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.activeBlob {
+  background-color: #28a745; /* Active blob color */
+}
+
+@media (max-width: 768px) {
+  .containerLevel {
+    height: 60px; /* Adjust height for mobile */
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .levelLabel {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .blob {
+    width: 25px; /* Smaller blob on mobile */
+    height: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .containerLevel {
+    height: 60px; /* Further reduce height on very small screens */
+    padding: 5px 10px; /* Adjust padding */
+  }
+
+  .levelLabel {
+    font-size: 10px; /* Further reduce font size for small screens */
+  }
+
+  .blob {
+    width: 20px; /* Smaller blobs for tiny screens */
+    height: 20px;
+  }
+}
+
+.Skill {
+  margin-top: 30px;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(45deg, #00bcd4, #66bb6a); /* Light blue to green gradient */
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.4), 0 0 15px rgba(102, 187, 106, 0.3);
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.6), 0 0 20px rgba(102, 187, 106, 0.5);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skillsAmount {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .skillsAmount1, .skillsAmount2 {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+
+  .ChartContainer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .Chart1, .Chart2 {
+      max-width: 80%;
+      margin-bottom: 20px;
+  }
+
+  .auditInfo {
+      flex-direction: column;
+  }
+
+  .auditData {
+      margin-bottom: 10px;
+  }
+
+  .levelxp {
+      padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+      font-size: 1.25rem;
+  }
+
+  .table {
+      font-size: 0.875rem;
+  }
+
+  .levelxp {
+      padding: 10px;
+  }
+
+  .h3m, .h3z {
+      font-size: 1.25rem;
+  }
+
+  .Code, .code2 {
+      font-size: 0.875rem;
+  }
+
+  .auditTitle {
+      font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+      padding: 0 10px;
+  }
+
+  .skillsAmount {
+      flex-direction: column;
+  }
+
+  .ChartContainer {
+      flex-direction: column;
+  }
+
+  .Skill {
+      padding: 10px;
+  }
+
+  .levelxp {
+      padding: 10px;
+  }
+
+  .h3m, .h3z {
+      font-size: 1.1rem;
+  }
+
+  .progressBar {
+      height: 15px;
+  }
+
+  .auditRatio {
+      font-size: 1rem;
+  }
+
+  .auditData {
+      font-size: 0.875rem;
+  }
+}

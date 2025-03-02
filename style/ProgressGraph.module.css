@@ -1,0 +1,136 @@
+/* Progress Style */
+.container {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  width: 45%; 
+  max-width: 600px; 
+  margin: 1.5rem auto;
+  text-align: center;
+  color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+}
+
+.levels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+
+.levelMarker {
+  position: absolute;
+  bottom: 2px;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+
+.levelLabel {
+  font-size: 0.5rem;
+  margin-bottom: 5px;
+  color: white;
+}
+
+
+.blob {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+
+.activeBlob {
+  background: linear-gradient(135deg, #ff6a00, #ff4081); 
+  transform: scale(1.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); 
+  animation: floating 2s ease-in-out infinite, scaleUp 1s infinite alternate;
+}
+
+
+.currentLevel {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff4081;
+}
+
+/* Floating Animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Scale Animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 85%; /* Adjust for smaller screen sizes */
+    top: 10%;   /* Adjust positioning for smaller screens */
+    left: 0;    /* Align to the left */
+  }
+
+  .levels {
+    padding: 0 0.5rem; /* Reduce padding for small screens */
+  }
+
+  .levelLabel {
+    font-size: 0.4rem; /* Adjust font size for mobile screens */
+  }
+
+  .blob {
+    width: 10px;  /* Reduce size of blob on mobile */
+    height: 10px;
+  }
+
+  .activeBlob {
+    transform: scale(1); /* Smaller active blob on mobile */
+  }
+
+  .currentLevel {
+    font-size: 0.8rem; /* Smaller font for current level on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%; /* Even smaller width for extra small devices */
+    top: 20%;   /* Adjust top position */
+  }
+
+  .levels {
+    flex-direction: column; /* Stack level markers vertically on very small screens */
+    align-items: center;
+  }
+
+  .blob {
+    width: 8px; /* Further reduce blob size */
+    height: 8px;
+  }
+
+  .levelLabel {
+    font-size: 0.35rem; /* Further reduce font size */
+  }
+}
+  
