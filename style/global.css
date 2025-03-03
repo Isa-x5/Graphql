@@ -20,9 +20,10 @@ body {
   background-color: gray;
 }
 h4 {
+  top: -40px; /* Distance from the top of the page */
+  left: -30px; /* Distance from the left of the page */
   position: absolute; /* Fix it at the top */
-  top: 1px; /* Distance from the top */
-  font-size: 2rem; 
+  font-size: 3rem; 
   font-weight: 700;
   text-transform: uppercase; /* Modern uppercase style */
   letter-spacing: 2px; /* Spaced-out letters for elegance */

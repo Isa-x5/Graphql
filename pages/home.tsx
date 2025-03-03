@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className={styles.homecontainer}>
       <div className={styles.welcometext}>
-      <h4>Welcome</h4>
+      <h4>Welcome,</h4>
 </div>
       <div className={styles.usercardcontainer}>
   <UserCard onTogglePopup={togglePopup} isPopupVisible={isPopupVisible} />
