@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import "../style/usercard.css";
-import { logout } from "../app/auth";
+import  {logout}  from "../app/auth";
 
 // Define TypeScript interfaces based on the expected data structure
 interface UserAttrs {
@@ -92,8 +92,14 @@ const UserCard: React.FC<UserCardProps> = ({ onTogglePopup, isPopupVisible }) =>
 
   const handleLogout = (e: React.MouseEvent) => {
     e.preventDefault();
+    
+    // Remove JWT token by calling the logout function
     logout();
-    localStorage.removeItem("jwt");
+    
+    // Optionally log the token removal
+    console.log("JWT token removed:", localStorage.getItem("jwt"));
+    
+    // Redirect to the login page
     router.push("/login");
   };
 
@@ -108,7 +114,7 @@ const UserCard: React.FC<UserCardProps> = ({ onTogglePopup, isPopupVisible }) =>
       {isPopupVisible && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <button className="logoutBtn" onClick={handleLogout} title="Logout">
+            <button className="logoutBtn" onClick={handleLogout}>
               Logout
             </button>
 
@@ -154,7 +160,7 @@ const UserCard: React.FC<UserCardProps> = ({ onTogglePopup, isPopupVisible }) =>
               )}
             </div>
             <button type="button" onClick={onTogglePopup} className="close-btn">
-              Close
+            ❌
             </button>
           </div>
         </div>

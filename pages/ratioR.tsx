@@ -54,7 +54,7 @@ export const AuditRatio: React.FC<{ auditRatio: number; totalUp: number; totalDo
             {/* Audit Ratio Display */}
             <div className={styles.auditRatio}>
                 <span className={styles.ratioNumber}>{auditRatio}</span>
-                <span className={styles.ratioText}>😲!</span>
+                <span className={styles.ratioText}>Keep on Going 💪</span>
             </div>
             {/* Audit Info Display */}
             <div className={styles.auditInfo}>

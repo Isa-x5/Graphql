@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 /* Parent container */
 .homecontainer {
   min-height: 100vh; /* Ensures it covers the full viewport height */
@@ -18,7 +20,7 @@
   text-transform: uppercase; /* Modern uppercase style */
   letter-spacing: 2px; /* Spaced-out letters for elegance */
   text-align: left; /* Align the text to the left */
-  background: linear-gradient(90deg, #7efff6, #75ffb5); /* Smooth gradient */
+  background: linear-gradient(90deg, #00bcd4, #1abc9c); /* Modern gradient from teal to light blue */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* Gradient text effect */
   animation: fadeIn 1s ease-in-out; /* Smooth entrance */
@@ -120,7 +122,7 @@
   justify-content: center;
   margin: 20px 0;
   padding: 20px;
-  background: linear-gradient(135deg, #00bcd4, #8bc34a); /* Light blue to green gradient */
+  background: #f1f8e9;;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -137,19 +139,35 @@
   margin-right: 20px;
 }
 
-.h3m, .h3z {
+.h3m{
   font-size: 1.6rem;
   margin-bottom: 10px;
   font-weight: 600;
-  color: black;
+  color: #00bcd4;
+  text-decoration:underline;
+}
+.h3z {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #ed9c2b;
+  text-decoration:underline;
 }
 
-.Code, .code2 {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: black; /* Very light cyan color */
+.Code{
+  font-size: 1rem;
+  line-height: 1;
+  color: #00bcd4; 
+  font-weight: bold;
+}
+.code2 {
+  font-size: 1rem;
+  line-height: 1;
+  color: #ed9c2b; 
+  font-weight: bold;
 }
 
+/* Chart Component */
 .ChartContainer {
   display: flex;
   justify-content: space-between;
@@ -186,7 +204,7 @@
 .progressBar {
   width: 100%;
   height: 20px;
-  background-color: #cce7d0; /* Light green background for the progress bar */
+  background-color: #cce7d0; 
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -218,8 +236,39 @@
 }
 
 .ratioText {
-  font-size: 1.4rem;
-  color: #388e3c; /* Slightly darker green */
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  font-size: 1.3rem; /* Slightly larger font size */
+  font-weight: bold;
+  color: black;
+  margin-left: 20px;
+  position: relative;
+  animation: moveText 4s ease-in-out infinite, colorShift 3s linear infinite; /* Adding two animations */
+}
+
+/* Continuous moving effect */
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px); /* Slightly move to the right */
+  }
+  100% {
+    transform: translateX(0); /* Go back to the original position */
+  }
+}
+
+/* Smooth color shift animation */
+@keyframes colorShift {
+  0% {
+    color: #000000; /* Black */
+  }
+  50% {
+    color: #33ffaa; /* Vibrant Red */
+  }
+  100% {
+    color: #000000; /* Back to Black */
+  }
 }
 
 .auditInfo {
@@ -233,8 +282,9 @@
   text-align: center;
   font-size: 1.1rem;
   color: #333;
+  font-weight: bold;
   padding: 10px;
-  background: #ffffff; /* White background for each audit item */
+  background: transparent; /* White background for each audit item */
   border-radius: 8px;
 }
 
@@ -249,7 +299,7 @@
 .auditSection {
   margin-bottom: 30px;
   border-radius: 15px;
-  background: linear-gradient(135deg, #81d4fa, #66bb6a); /* Light blue to light green gradient */
+  background: #f1f8e9;; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
@@ -257,7 +307,7 @@
 .header {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: black; /* Light blue header */
+  color: black; 
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -265,7 +315,7 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #f0f8ff; /* Light blue background for table */
+  background-color: #f0f8ff; 
   max-height: 300px;
   overflow-y: auto;
   display: block;
@@ -281,22 +331,22 @@
 }
 
 .th {
-  background-color: #4caf50; /* Green header for the table */
-  color: #fff;
+  background-color: #00bcd4; 
+  color: black;
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
 }
 
 .pass {
-  color: lightgreen; 
-  font-weight: 500;
+  color: rgb(28, 241, 28); 
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .fail {
-  color: #ff7043; /* Light red for failure */
-  font-weight: 500;
+  color: #f10505; 
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
@@ -319,19 +369,21 @@
 }
 
 .table .td {
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 12px;
-  background-color: #ffffff; /* White background for table rows */
+  background-color: #f1f8e9; 
   transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .noAudits {
   text-align: center;
-  color: #bbb;
+  color: red;
+  font-weight: bold;
   font-size: 1.2rem;
   font-style: italic;
   padding: 20px;
-  background: #e8f5e9; /* Light green background for no audits */
+  background: #e8f5e9; 
   border-radius: 10px;
 }
 
@@ -340,28 +392,24 @@
   transform: translateY(-5px);
 }
 
-
-.levels{
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.xp {
+.levels, .xp {
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  background-color: #f1f8e9; 
+  margin-bottom: 5px;
+  padding: 10px 20px; 
+  display: inline-block; 
+  color: #00bcd4; 
+  border-radius: 15px; 
 }
 
-/* Ensuring the container level spans the full width */
+
 .containerLevel {
   width: 100%; /* Ensure full width of the screen or parent container */
   height:80px; /* Set height for the container */
   position: relative; /* For absolute positioning of child elements */
-  background-color: #e1f5fe; /* Light blue background */
+  background-color: #f1f8e9; /* Light blue background */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 6px 18px rgba(0, 123, 255, 0.1); /* Shadow effect */
   padding: 10px 20px; /* Add some padding for the internal content */
@@ -369,14 +417,14 @@
   overflow: auto; /* Prevent anything from overflowing */
 }
 
-/* Ensures that the level markers and blobs take full width */
+
 .level {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* Style for individual level markers */
+
 .levelMarker {
   position: absolute;
   bottom: 0;
@@ -389,6 +437,8 @@
   position: absolute;
   bottom: 15px;
   font-size: 12px;
+  color: black;
+  font-weight: bold;
   text-align: center;
   width: 100%;
 }
@@ -399,13 +449,43 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #007bff;
+  background-color: #8b80f9; 
   transition: background-color 0.3s ease;
 }
 
+/* Active Blob with cool effect */
 .activeBlob {
-  background-color: #28a745; /* Active blob color */
+  background-color: #5f2ccf; /* Darker, more vibrant purple for active state */
+  border-radius: 50%; /* Keep it circular */
+  width: 17px; /* Size of the blob */
+  height: 17px; /* Size of the blob */
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for active state */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+  animation: blobPulse 1.5s ease-in-out infinite; /* Animation to make the blob "pulse" */
 }
+
+/* Pulse animation for active blob */
+@keyframes blobPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Slightly bigger at the peak */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Hover Effect */
+.activeBlob:hover {
+  background-color: #218838; /* Slightly darker green on hover */
+  transform: scale(1.1); /* Slightly scale up when hovered */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
 
 @media (max-width: 768px) {
   .containerLevel {
@@ -418,8 +498,13 @@
   }
 
   .blob {
-    width: 25px; /* Smaller blob on mobile */
-    height: 25px;
+    width: 20px; /* Smaller blob on mobile */
+    height: 20px;
+  }
+  .activeBlob{
+    width: 20px; /* Smaller blob on mobile */
+    height: 20px;
+
   }
 }
 
@@ -434,8 +519,12 @@
   }
 
   .blob {
-    width: 20px; /* Smaller blobs for tiny screens */
-    height: 20px;
+    width: 15px; /* Smaller blobs for tiny screens */
+    height: 15px;
+  }
+  .activeBlob{
+    width: 15px; /* Smaller blobs for tiny screens */
+    height: 15px;
   }
 }
 

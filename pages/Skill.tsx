@@ -107,8 +107,8 @@ const SkillChart: React.FC = () => {
         .style("position", "absolute")
         .style("visibility", "hidden")
         .style("background-color", "white")
-        .style("color", "red")
-        .style("border", "1px solid red")
+        .style("color", "black")
+        .style("border", "1px solid black")
         .style("padding", "5px")
         .style("border-radius", "5px")
         .style("font-weight", "bold")  
@@ -210,7 +210,7 @@ const SkillChart: React.FC = () => {
                     </p> 
                 </div>
                 <div className={Style.skillsAmount2}>
-                    <h3 className={Style.h3z}>Skills</h3>
+                    <h3 className={Style.h3z}>Technologies</h3>
                     <p className={Style.code2}>
                         {codeSkills.length > 0
                             ? codeSkills.map(skill => `${skill.type.replace("skill_", "").replace("-", " ")}: ${skill.amount}%`).join(", ")

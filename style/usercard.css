@@ -1,53 +1,82 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Clean and modern font */
+  background-color: #f7f9fc; /* Soft off-white background */
+  color: #2c3e50; /* Dark text for readability */
   margin: 0;
   padding: 0;
-  background-color: #f4f7fb;  /* Softer background */
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;  /* Prevent horizontal scroll */
-  height: 100vh;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center content vertically */
 }
-/* Button styles */
-.user-info-btn {
-  background: linear-gradient(90deg, #7efff6, #75ffb5); /* Smooth gradient */
-  font-size: large; /* Default font size */
-  padding: 15px 25px; /* Default padding */
+
+/* User Info Button */
+.user-info-btn { 
+  background: transparent;
+  font-size: 1.5rem; /* Larger size for the icon */
+  padding: 15px 20px; /* Add padding for a button look */
   border: none;
-  border-radius: 15px;
+  border-radius: 50%;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%; /* Full width on all screen sizes */
-  animation: fadeIn 1s ease-in-out; /* Smooth entrance */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Large shadow for the button */
+  transition: transform 0.3s ease, background 0.3s ease; /* Button hover effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px; /* Space below button */
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .user-info-btn {
-    font-size: 1.2rem; /* Slightly smaller font size for medium screens */
-    padding: 12px 20px; /* Reduce padding for medium screens */
-  }
+.user-info-btn:hover {
+  transform: scale(1.6); /* Slight zoom effect */
 }
 
-@media (max-width: 768px) {
-  .user-info-btn {
-    font-size: 1rem; /* Further reduce font size for smaller screens */
-    padding: 10px 15px; /* Further reduce padding */
-  }
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darkened overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Ensure the overlay sits on top */
+  opacity: 0;
+  animation: fadeInOverlay 0.3s forwards; /* Smooth fade-in */
 }
 
-@media (max-width: 480px) {
-  .user-info-btn {
-    font-size: 0.9rem; /* Smaller font size for mobile screens */
-    padding: 8px 12px; /* Smaller padding for mobile screens */
-  }
-}
-
-/* Fade-in animation for smooth entrance */
-@keyframes fadeIn {
+/* Smooth fade-in effect for overlay */
+@keyframes fadeInOverlay {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Popup content container */
+.popup-content {
+  background-color: #fff;
+  border-radius: 15px; /* Soft rounded corners */
+  padding: 30px;
+  max-width: 600px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Soft shadow around the popup */
+  animation: fadeInContent 0.3s ease-out; /* Smooth fade-in effect */
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Smooth fade-in effect for content */
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
   }
   100% {
     opacity: 1;
@@ -55,310 +84,135 @@ body {
   }
 }
 
-/* Container for the page */
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;  /* Full height of viewport */
-  overflow-y: auto;  /* Allows vertical scrolling when content overflows */
-}
-
-/* Navbar Styles */
-.navbar {
-  background-color: #2c3e50;  /* Darker primary color */
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .logo {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #ecf0f1;
-}
-
-.navbar .nav-link {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar .nav-link li {
-  cursor: pointer;
-}
-
-.navbar .nav-link a {
-  text-decoration: none;
-  color: #ecf0f1;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-.navbar .nav-link a:hover {
-  color: #3498db;  /* Hover color */
-}
-
-/* Popup Overlay */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  z-index: 10;
-}
-
-/* Popup Content (Responsive to Screen Size) */
-.popup-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 30vw;  /* 30% of viewport width */
-  max-width: 400px;
-  min-width: 250px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  animation: fadeIn 0.3s ease-out;
-  position: relative;
-  max-height: 70vh;  /* Limit height */
-  overflow-y: auto;  /* Enable scrolling for content */
-  overflow-x: hidden;
-}
-
-/* Arrow logout button in the top-right corner */
+/* Close button in the top-right corner */
+/* Style for the logout button */
 .logoutBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 22px;
-  height: 22px;
-  background-color: transparent;
-  border: 2px solid #e74c3c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  background-color: lightgray;  /* Redish background for logout */
+  color: white;
+  border-radius: 25px;
+  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center; /* Align emoji and text */
+  position: absolute;  /* Position it absolutely */
+  top: 20px;  /* Position it 20px from the top */
+  right: 20px;  /* Position it 20px from the right */
 }
 
-/* Arrow icon created with CSS */
-.logoutBtn::before {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-top: 2px solid #e74c3c;
-  border-right: 2px solid #e74c3c;
-  transform: rotate(45deg);
-}
-
-/* Hover effect */
+/* Logout button hover effect */
 .logoutBtn:hover {
-  background-color: #e74c3c;
-  transform: scale(1.1);
+  background-color: #e74c3c;  /* Darker red on hover */
+  transform: scale(1.05);  /* Slight zoom effect */
 }
 
-.logoutBtn:hover::before {
-  border-top-color: white;
-  border-right-color: white;
+
+/* Welcome message */
+.welcome {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1abc9c;  /* Light blue text for the welcome message */
+  margin-bottom: 20px;
 }
 
-/* Close button style (for the user info popup) */
-.popup-content button {
-  background-color: #7efff6;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-  width: 20%;
+/* Divider line */
+.line {
+  border-bottom: 2px solid black;  /* Blue divider line */
+  width: 60%;
+  margin: 20px auto;
 }
 
-/* Hover effect for Close button */
-.popup-content button:hover {
-  background-color: #75ffb5;
+/* User info text styling */
+.paragraph {
+  color: #34495e; /* Dark gray for text */
+  font-size: 1.1rem;
+  margin: 12px 0;
+  text-align: left;
+  line-height: 1.6; /* Increase line spacing */
 }
 
-/* Popup Title */
-.popup-content h1 {
-  font-size: 1.6rem;  /* Slightly larger heading */
-  margin-bottom: 15px;
-  color: #34495e;
-}
-
-/* Divider Line */
-.popup-content .line {
-  border-bottom: 2px solid #1abc9c;
-  margin-bottom: 15px;
-}
-
-/* User Info Section */
-.user-info {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
-}
-
-.user-info h1 {
-  font-size: 1.5rem;
-  color: #34495e;
-  margin-bottom: 10px;
-}
-
-.user-info .paragraph {
-  font-size: 0.9rem;
-  margin: 8px 0;
-  color: #7f8c8d;
-}
-
-.user-info .paragraph span {
-  font-weight: 600;
-  color: #34495e;
-}
-
-.user-info .paragraph .value {
-  color: #1abc9c;
-}
-
-/* Title and Section */
-.title {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.title h1 {
+/* Styled name */
+#name {
+  color: #1abc9c;  /* Red for name */
   font-size: 2rem;
   font-weight: 600;
-  color: #34495e;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px; /* Slightly spaced out letters */
 }
 
-.title .line {
-  margin-top: 12px;
-  border-bottom: 3px solid #1abc9c;
-  width: 60px;
-  margin: 10px auto;
+/* Button to close the popup */
+.close-btn {
+  background-color: lightgray;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
+  font-size: 1rem;
 }
 
-/* Media Queries for Smaller Popup Responsiveness */
-@media (max-width: 1024px) {
-  .popup-content {
-    width: 40vw; /* Responsive width for larger tablets */
-    padding: 15px;
-  }
-
-  .popup-content h1 {
-    font-size: 1.4rem;
-  }
-
-  .logoutBtn {
-    width: 20px;
-    height: 20px;
-  }
-
-  .popup-content button {
-    padding: 8px 12px;
-  }
-
-  .title h1 {
-    font-size: 1.8rem;
-  }
-
-  .user-info h1 {
-    font-size: 1.4rem;
-  }
+.close-btn:hover {
+  background-color: #ef6262; /* Light blue when hovered */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Hover effects for paragraphs */
+.paragraph:hover {
+  color: #1abc9c; /* Change text color on hover */
+  font-weight: 500; /* Make text bold on hover */
+}
+
+/* Responsive styling */
 @media (max-width: 768px) {
   .popup-content {
-    width: 50vw; /* Larger width for medium screens */
-    padding: 15px;
+    width: 90%; /* Increase width on smaller screens */
   }
 
-  .popup-content h1 {
-    font-size: 1.3rem;
+  .welcome {
+    font-size: 1.6rem; /* Adjust size for smaller screens */
   }
 
-  .logoutBtn {
-    width: 18px;
-    height: 18px;
+  .line {
+    width: 50%; /* Adjust width of divider */
   }
 
-  .popup-content button {
-    padding: 8px 10px;
+  .paragraph {
+    font-size: 1rem; /* Adjust font size for smaller screens */
   }
 
-  .title h1 {
-    font-size: 1.6rem;
-  }
-
-  .user-info h1 {
-    font-size: 1.3rem;
+  #name {
+    font-size: 1.7rem; /* Adjust font size for name */
   }
 }
 
 @media (max-width: 480px) {
   .popup-content {
-    width: 60vw; /* Larger width for small screens */
-    padding: 12px;
+    width: 95%; /* Full width on very small screens */
+    padding: 20px;
   }
 
-  .popup-content h1 {
-    font-size: 1.2rem;
-  }
-
-  .logoutBtn {
-    width: 16px;
-    height: 16px;
-  }
-
-  .popup-content button {
-    padding: 6px 10px;
-  }
-
-  .title h1 {
+  .welcome {
     font-size: 1.4rem;
   }
 
-  .user-info h1 {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .popup-content {
-    width: 70vw; /* Adjust for very small screens */
-    padding: 10px;
+  .line {
+    width: 60%; /* Adjust width of divider */
   }
 
-  .popup-content h1 {
-    font-size: 1.1rem; /* Reduce font size more */
+  .close-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
   }
 
-  .logoutBtn {
-    width: 14px; /* Adjust for very small screens */
-    height: 14px;
+  #name {
+    font-size: 1.6rem;
   }
 
-  .popup-content button {
-    padding: 6px 8px;
-  }
-
-  .title h1 {
-    font-size: 1.3rem; /* Adjust for very small screens */
-  }
-
-  .user-info h1 {
-    font-size: 1.2rem;
+  .paragraph {
+    font-size: 0.95rem;
   }
 }

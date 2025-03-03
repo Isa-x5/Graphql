@@ -18,7 +18,6 @@ export async function signIn(email: string, password: string) {
       if (token) {
         const cleanToken = token.replace(/^"(.*)"$/, "$1");  // remove the token from the response
         localStorage.setItem("jwt", cleanToken); // set the token to the response 
-        console.log("JWT Token saved:", localStorage.getItem('jwt'));
 
         return cleanToken; // Return the token for use in redirection
       } else {
@@ -75,5 +74,5 @@ export const fetchUserInfo = async () => { // Get user information
 };
 
 export const logout = () => {
-  localStorage.removeItem('jwt'); // remove  the token from local storage
+  localStorage.removeItem('jwt'); // Remove the JWT token from localStorage
 };
