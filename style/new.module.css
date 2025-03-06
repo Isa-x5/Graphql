@@ -548,6 +548,15 @@
     width: 14px; /* Smaller active blobs */
     height: 14px;
   }
+  .ratioNumber{
+    font-size: medium;
+  }
+  .levels, .xp {
+    font-size: medium;
+  }
+  .ratioText{
+    font-size: small;
+  }
 }
 
 /* Media Query for max-width 440px */
@@ -569,6 +578,15 @@
   .activeBlob {
     width: 12px; /* Even smaller active blobs */
     height: 12px;
+  }
+  .ratioNumber{
+    font-size: small;
+  }
+  .levels, .xp {
+    font-size: small;
+  }
+  .ratioText{
+    font-size: x-small;
   }
 }
 
@@ -750,6 +768,10 @@
   .skillsAmount1, .skillsAmount2 {
       margin-bottom: 15px; /* Adjust margin */
   }
+  .Chart1, .Chart2 {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
 }
 
 /* Media Query for max-width 440px */

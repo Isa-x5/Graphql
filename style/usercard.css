@@ -215,4 +215,7 @@ body {
   .paragraph {
     font-size: 0.95rem;
   }
+  .user-info-btn {
+    font-size: small;
+  }
 }
