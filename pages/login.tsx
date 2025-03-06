@@ -14,21 +14,25 @@ const LoginPage = () => {
   const handleLogin = async (e: React.FormEvent) => { 
     e.preventDefault();
     setErrorMessage('');
+try{
+    const result = await signIn(identifier, password);
 
-    const token = await signIn(identifier, password);
-
-    if (token && token !== "Login successful, but no token received.") {
-      // Token is received and saved
-      localStorage.setItem('jwt', token);
-      console.log("Redirecting to home...");
-
-      // Redirect after token is saved
-      setTimeout(() => {
-        router.push('/home');
-      }, 100);
-    } else {
-      setErrorMessage('Invalid credentials. Please try again.');
+    if (result.error) {
+      setErrorMessage(result.error);
+      return;
     }
+    const token = result;
+    localStorage.setItem('jwt', token); // Set the JWT token to localStorage
+    console.log('Login successful');
+
+    setTimeout(() => {
+      router.push('/home'); // Redirect to the home page
+    }
+    , 100);
+  }catch (error){
+    console.error('Error:', error);
+    setErrorMessage('Wrong email or password');
+  }
   };  
 
   return (

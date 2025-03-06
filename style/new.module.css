@@ -528,6 +528,50 @@
   }
 }
 
+/* Media Query for max-width 480px */
+@media (max-width: 480px) {
+  .containerLevel {
+    height: 55px; /* Slightly smaller height */
+    padding: 5px 8px; /* Adjust padding */
+    margin-top: 15px; /* Adjust margin */
+  }
+
+  .levelLabel {
+    font-size: 9px; /* Further reduce font size */
+  }
+
+  .blob {
+    width: 14px; /* Smaller blobs */
+    height: 14px;
+  }
+  .activeBlob {
+    width: 14px; /* Smaller active blobs */
+    height: 14px;
+  }
+}
+
+/* Media Query for max-width 440px */
+@media (max-width: 440px) {
+  .containerLevel {
+    height: 50px; /* Further reduce height */
+    padding: 5px 6px; /* Adjust padding */
+    margin-top: 10px; /* Adjust margin */
+  }
+
+  .levelLabel {
+    font-size: 8px; /* Further reduce font size */
+  }
+
+  .blob {
+    width: 12px; /* Even smaller blobs */
+    height: 12px;
+  }
+  .activeBlob {
+    width: 12px; /* Even smaller active blobs */
+    height: 12px;
+  }
+}
+
 .Skill {
   margin-top: 30px;
 }
@@ -648,5 +692,119 @@
 
   .auditData {
       font-size: 0.875rem;
+  }
+}
+
+/* Media Query for max-width 480px */
+@media (max-width: 480px) {
+  .header {
+      font-size: 1rem; /* Slightly smaller font for the header */
+  }
+
+  .table {
+      font-size: 0.75rem; /* Smaller font for the table */
+  }
+
+  .levelxp {
+      padding: 8px; /* Reduce padding for levelxp */
+  }
+
+  .h3m, .h3z {
+      font-size: 1rem; /* Further reduce font size */
+  }
+
+  .Code, .code2 {
+      font-size: 0.75rem; /* Smaller code font size */
+  }
+
+  .auditTitle {
+      font-size: 1.125rem; /* Slightly smaller audit title */
+  }
+
+  .skillsAmount {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .ChartContainer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .Skill {
+      padding: 8px; /* Smaller padding for skills */
+  }
+
+  .progressBar {
+      height: 12px; /* Smaller progress bar */
+  }
+
+  .auditRatio {
+      font-size: 0.875rem; /* Smaller font size for audit ratio */
+  }
+
+  .auditData {
+      font-size: 0.75rem; /* Smaller font size for audit data */
+  }
+
+  .skillsAmount1, .skillsAmount2 {
+      margin-bottom: 15px; /* Adjust margin */
+  }
+}
+
+/* Media Query for max-width 440px */
+@media (max-width: 440px) {
+  .header {
+      font-size: 0.875rem; /* Further reduce header font size */
+  }
+
+  .table {
+      font-size: 0.625rem; /* Further reduce table font size */
+  }
+
+  .levelxp {
+      padding: 6px; /* Even smaller padding */
+  }
+
+  .h3m, .h3z {
+      font-size: 0.875rem; /* Further reduce font size */
+  }
+
+  .Code, .code2 {
+      font-size: 0.625rem; /* Smaller code font size */
+  }
+
+  .auditTitle {
+      font-size: 1rem; /* Smaller audit title font */
+  }
+
+  .skillsAmount {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .ChartContainer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .Skill {
+      padding: 6px; /* Smaller padding for skills */
+  }
+
+  .progressBar {
+      height: 10px; /* Further reduce progress bar size */
+  }
+
+  .auditRatio {
+      font-size: 0.75rem; /* Smaller font size for audit ratio */
+  }
+
+  .auditData {
+      font-size: 0.625rem; /* Smaller font size for audit data */
+  }
+
+  .skillsAmount1, .skillsAmount2 {
+      margin-bottom: 10px; /* Adjust margin */
   }
 }
