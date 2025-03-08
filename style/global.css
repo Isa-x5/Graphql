@@ -55,17 +55,17 @@ h4 {
 
 @media (max-width: 480px) {
   h4 {
-    font-size: 1.4rem; /* Even smaller font for mobile screens */
+    font-size: 1.6rem; /* Even smaller font for mobile screens */
     bottom: 5px; /* Adjust bottom position */
-    left: 10px; /* Slightly more space on the left */
+    left: 40px; /* Slightly more space on the left */
   }
   
 }
 @media (max-width: 440px) {
   h4 {
-    font-size: 1.1rem; /* Even smaller font for mobile screens */
+    font-size: 1.5rem; /* Even smaller font for mobile screens */
     bottom: 5px; /* Adjust bottom position */
-    left: 27px; /* Slightly more space on the left */
+    left: 30px; /* Slightly more space on the left */
   }
   
 }

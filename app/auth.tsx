@@ -74,5 +74,6 @@ export const fetchUserInfo = async () => { // Get user information
 };
 
 export const logout = () => {
+  document.cookie = "jwt=; path=/; max-age=0"; // Remove the JWT token from the cookie
   localStorage.removeItem('jwt'); // Remove the JWT token from localStorage
 };

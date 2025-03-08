@@ -196,7 +196,8 @@ body {
   }
 
   .welcome {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    
   }
 
   .line {
@@ -217,5 +218,8 @@ body {
   }
   .user-info-btn {
     font-size: small;
+  }
+  .logoutBtn{
+    font-size: x-small;
   }
 }
