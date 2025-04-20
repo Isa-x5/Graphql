@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+
 /* Parent container */
 .homecontainer {
   min-height: 100vh; /* Ensures it covers the full viewport height */
@@ -8,8 +9,10 @@
   align-items: center;  /* Centers items horizontally */
   justify-content: flex-start; /* Align items to the top */
   text-align: center;
-  padding: 20px;
+  padding: 100px;
   position: relative; /* Needed for absolute positioning of other elements */
+  background: linear-gradient(135deg, #f0f8ff, #e0f7fa); /* Light blue gradient */
+  border-radius: 10px;
 }
 
 /* Welcome text style */
@@ -126,6 +129,11 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+.Skill:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
 
 .skillsAmount {
   display: flex;
@@ -175,6 +183,7 @@
   
 }
 
+
 .Chart1, .Chart2 {
   flex: 1;
   max-width: 400px;
@@ -193,6 +202,10 @@
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.auditContainer:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 .auditTitle {
@@ -403,6 +416,14 @@
   color: #00bcd4; 
   border-radius: 15px; 
 }
+.levels:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.xp:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
 
 
 .containerLevel {
@@ -415,6 +436,10 @@
   padding: 10px 20px; /* Add some padding for the internal content */
   margin-top: 30px;
   overflow: auto; /* Prevent anything from overflowing */
+}
+.containerLevel:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 
