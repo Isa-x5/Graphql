@@ -11,7 +11,6 @@
   text-align: center;
   padding: 100px;
   position: relative; /* Needed for absolute positioning of other elements */
-  background: linear-gradient(135deg, #f0f8ff, #e0f7fa); /* Light blue gradient */
   border-radius: 10px;
 }
 

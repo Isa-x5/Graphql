@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #1f1f1f;
+    background: linear-gradient(135deg, #f0f8ff, #e0f7fa); /* Light blue gradient */
     overflow: hidden;
     position: relative;
 }
